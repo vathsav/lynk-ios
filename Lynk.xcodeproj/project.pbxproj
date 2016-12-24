@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1733BD1E0AC6BE00D85781 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1733BB1E0AC6BE00D85781 /* Main.storyboard */; };
+		BE1733BF1E0ACBE800D85781 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1733BE1E0ACBE800D85781 /* LoginViewController.swift */; };
+		BE1733C11E0ACC6100D85781 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1733C01E0ACC6100D85781 /* PreferencesViewController.swift */; };
 		BE9666F31E04139B003FD46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9666F21E04139B003FD46A /* AppDelegate.swift */; };
 		BE9666F51E04139B003FD46A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9666F41E04139B003FD46A /* ViewController.swift */; };
-		BE9666F81E04139B003FD46A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9666F61E04139B003FD46A /* Main.storyboard */; };
 		BE9666FA1E04139B003FD46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE9666F91E04139B003FD46A /* Assets.xcassets */; };
 		BE9666FD1E04139B003FD46A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9666FB1E04139B003FD46A /* LaunchScreen.storyboard */; };
 		BE9667081E04139B003FD46A /* LynkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9667071E04139B003FD46A /* LynkTests.swift */; };
 		BE9667131E04139B003FD46A /* LynkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9667121E04139B003FD46A /* LynkUITests.swift */; };
+		BED899F51E0EE418008C6451 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BED899EE1E0EE406008C6451 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BED899F71E0EE418008C6451 /* ParticleDeviceSetupLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BED899EF1E0EE406008C6451 /* ParticleDeviceSetupLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BED899F91E0EE418008C6451 /* ParticleSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BED899F01E0EE406008C6451 /* ParticleSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,11 +38,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BEE210401E0ED86C006D9EEE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BED899F91E0EE418008C6451 /* ParticleSDK.framework in Embed Frameworks */,
+				BED899F71E0EE418008C6451 /* ParticleDeviceSetupLibrary.framework in Embed Frameworks */,
+				BED899F51E0EE418008C6451 /* AFNetworking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		BE1733BC1E0AC6BE00D85781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE1733BE1E0ACBE800D85781 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BE1733C01E0ACC6100D85781 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		BE9666EF1E04139B003FD46A /* Lynk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lynk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9666F21E04139B003FD46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE9666F41E04139B003FD46A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE9666F71E04139B003FD46A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE9666F91E04139B003FD46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE9666FC1E04139B003FD46A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE9666FE1E04139B003FD46A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +70,9 @@
 		BE96670E1E04139B003FD46A /* LynkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LynkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9667121E04139B003FD46A /* LynkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LynkUITests.swift; sourceTree = "<group>"; };
 		BE9667141E04139B003FD46A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BED899EE1E0EE406008C6451 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		BED899EF1E0EE406008C6451 /* ParticleDeviceSetupLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParticleDeviceSetupLibrary.framework; path = Carthage/Build/iOS/ParticleDeviceSetupLibrary.framework; sourceTree = "<group>"; };
+		BED899F01E0EE406008C6451 /* ParticleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParticleSDK.framework; path = Carthage/Build/iOS/ParticleSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +107,9 @@
 				BE9667061E04139B003FD46A /* LynkTests */,
 				BE9667111E04139B003FD46A /* LynkUITests */,
 				BE9666F01E04139B003FD46A /* Products */,
+				BED899EE1E0EE406008C6451 /* AFNetworking.framework */,
+				BED899EF1E0EE406008C6451 /* ParticleDeviceSetupLibrary.framework */,
+				BED899F01E0EE406008C6451 /* ParticleSDK.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +127,13 @@
 			isa = PBXGroup;
 			children = (
 				BE9666F21E04139B003FD46A /* AppDelegate.swift */,
+				BE1733BE1E0ACBE800D85781 /* LoginViewController.swift */,
 				BE9666F41E04139B003FD46A /* ViewController.swift */,
-				BE9666F61E04139B003FD46A /* Main.storyboard */,
-				BE9666F91E04139B003FD46A /* Assets.xcassets */,
+				BE1733BB1E0AC6BE00D85781 /* Main.storyboard */,
 				BE9666FB1E04139B003FD46A /* LaunchScreen.storyboard */,
+				BE9666F91E04139B003FD46A /* Assets.xcassets */,
 				BE9666FE1E04139B003FD46A /* Info.plist */,
+				BE1733C01E0ACC6100D85781 /* PreferencesViewController.swift */,
 			);
 			path = Lynk;
 			sourceTree = "<group>";
@@ -135,6 +166,7 @@
 				BE9666EB1E04139B003FD46A /* Sources */,
 				BE9666EC1E04139B003FD46A /* Frameworks */,
 				BE9666ED1E04139B003FD46A /* Resources */,
+				BEE210401E0ED86C006D9EEE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,7 +220,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Vathsav Harikrishnan";
 				TargetAttributes = {
 					BE9666EE1E04139B003FD46A = {
@@ -235,9 +267,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1733BD1E0AC6BE00D85781 /* Main.storyboard in Resources */,
 				BE9666FD1E04139B003FD46A /* LaunchScreen.storyboard in Resources */,
 				BE9666FA1E04139B003FD46A /* Assets.xcassets in Resources */,
-				BE9666F81E04139B003FD46A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1733BF1E0ACBE800D85781 /* LoginViewController.swift in Sources */,
 				BE9666F51E04139B003FD46A /* ViewController.swift in Sources */,
 				BE9666F31E04139B003FD46A /* AppDelegate.swift in Sources */,
+				BE1733C11E0ACC6100D85781 /* PreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,10 +333,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BE9666F61E04139B003FD46A /* Main.storyboard */ = {
+		BE1733BB1E0AC6BE00D85781 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BE9666F71E04139B003FD46A /* Base */,
+				BE1733BC1E0AC6BE00D85781 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -336,6 +370,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -358,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -386,6 +421,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -402,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -416,11 +452,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QQ983836E8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Lynk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vathsav.Lynk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -429,11 +471,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QQ983836E8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Lynk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vathsav.Lynk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -514,6 +562,7 @@
 				BE9667191E04139B003FD46A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE96671A1E04139B003FD46A /* Build configuration list for PBXNativeTarget "LynkTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +571,7 @@
 				BE96671C1E04139B003FD46A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE96671D1E04139B003FD46A /* Build configuration list for PBXNativeTarget "LynkUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +580,7 @@
 				BE96671F1E04139B003FD46A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
