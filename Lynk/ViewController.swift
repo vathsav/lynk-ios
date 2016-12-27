@@ -91,13 +91,28 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPinsToggled(_ sender: UIButton) {
         if segmentedControlSelector.selectedSegmentIndex == 0 {
-            labelPinStatus.text = "Toggled \(sender.currentTitle!) with value \(lroundf(sliderAnalogValue.value))"
+            // Analog Pins
+            let arguments : [Any] = ["A\(sender.currentTitle!.characters.last!)", lroundf(sliderAnalogValue.value)]
+            print("Executing: \(arguments)")
+            ruthlessDynamite?.callFunction("analogWrite", withArguments: arguments, completion: { (resultCode : NSNumber?, error : Error?) in
+                if (error == nil) {
+                    print("Toggled \(sender.currentTitle!)")
+                    self.labelPinStatus.text = "Toggled \(sender.currentTitle!) with value \(lroundf(self.sliderAnalogValue.value))"
+                } else {
+                    self.labelPinStatus.text = "Unable to set value"
+                }
+            })
         } else {
-            labelPinStatus.text = "Toggled \(sender.currentTitle!)"
-            let arguments : [Any] = ["D7", 1]
+            // Digital Pins
+            let arguments : [Any] = ["D\(sender.currentTitle!.characters.last!)", 1]
+            print("Executing: \(arguments)")
             ruthlessDynamite?.callFunction("digitalWrite", withArguments: arguments, completion: { (resultCode : NSNumber?, error : Error?) in
                 if (error == nil) {
                     print("Toggled \(sender.currentTitle!)")
+                    self.labelPinStatus.text = "Toggled \(sender.currentTitle!)"
+                } else {
+                    print(error.debugDescription)
+                    self.labelPinStatus.text = "Unable to toggle"
                 }
             })
         }
