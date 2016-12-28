@@ -12,8 +12,25 @@ import ParticleDeviceSetupLibrary
 
 class ViewController: UIViewController {
 
+    // UI Components
+    @IBOutlet weak var segmentedControlSelector: UISegmentedControl!
+    @IBOutlet weak var labelPinStatus: UILabel!
+    @IBOutlet weak var buttonPinZero: UIButton!
+    @IBOutlet weak var buttonPinOne: UIButton!
+    @IBOutlet weak var buttonPinTwo: UIButton!
+    @IBOutlet weak var buttonPinThree: UIButton!
+    @IBOutlet weak var buttonPinFour: UIButton!
+    @IBOutlet weak var buttonPinFive: UIButton!
+    @IBOutlet weak var buttonPinSix: UIButton!
+    @IBOutlet weak var buttonPinSeven: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var sliderAnalogValue: UISlider!
+    
     // Globals
-    var ruthlessDynamite : SparkDevice?
+    var myCore : SparkDevice?
+    let toggleFuntion = "togglePin"
+    let analogFuntion = "analogWrite"
+    let deviceName = "ruthless_dynamite"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +48,9 @@ class ViewController: UIViewController {
             } else {
                 if let listOfDevices = particleDevice as? [SparkDevice]{
                     for device in listOfDevices {
-                        if device.name == "ruthless_dynamite" {
-                            self.ruthlessDynamite = device
+                        if device.name == self.deviceName {
+                            self.myCore = device
+                            self.activityIndicator.stopAnimating()
                         }
                     }
                 }
@@ -44,19 +62,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // UI Components
-    @IBOutlet weak var segmentedControlSelector: UISegmentedControl!
-    @IBOutlet weak var labelPinStatus: UILabel!
-    @IBOutlet weak var buttonPinZero: UIButton!
-    @IBOutlet weak var buttonPinOne: UIButton!
-    @IBOutlet weak var buttonPinTwo: UIButton!
-    @IBOutlet weak var buttonPinThree: UIButton!
-    @IBOutlet weak var buttonPinFour: UIButton!
-    @IBOutlet weak var buttonPinFive: UIButton!
-    @IBOutlet weak var buttonPinSix: UIButton!
-    @IBOutlet weak var buttonPinSeven: UIButton!
-    @IBOutlet weak var sliderAnalogValue: UISlider!
     
     @IBAction func segmentedControlPinSelector(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
@@ -90,13 +95,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonPinsToggled(_ sender: UIButton) {
-        if segmentedControlSelector.selectedSegmentIndex == 0 {
+        // self.activityIndicator.startAnimating()
+        self.labelPinStatus.text = nil
+        
+        if self.segmentedControlSelector.selectedSegmentIndex == 0 {
             // Analog Pins
-            let arguments : [Any] = ["A\(sender.currentTitle!.characters.last!)", lroundf(sliderAnalogValue.value)]
+            let arguments : [Any] = ["A\(sender.currentTitle!.characters.last!)", lroundf(self.sliderAnalogValue.value)]
             print("Executing: \(arguments)")
-            ruthlessDynamite?.callFunction("analogWrite", withArguments: arguments, completion: { (resultCode : NSNumber?, error : Error?) in
-                if (error == nil) {
-                    print("Toggled \(sender.currentTitle!)")
+            self.myCore?.callFunction(analogFuntion, withArguments: arguments, completion: { (resultCode : NSNumber?, error : Error?) in
+                if error == nil {
+                    print("Set \(sender.currentTitle!)")
                     self.labelPinStatus.text = "Toggled \(sender.currentTitle!) with value \(lroundf(self.sliderAnalogValue.value))"
                 } else {
                     self.labelPinStatus.text = "Unable to set value"
@@ -104,10 +112,9 @@ class ViewController: UIViewController {
             })
         } else {
             // Digital Pins
-            let arguments : [Any] = ["D\(sender.currentTitle!.characters.last!)", 1]
-            print("Executing: \(arguments)")
-            ruthlessDynamite?.callFunction("digitalWrite", withArguments: arguments, completion: { (resultCode : NSNumber?, error : Error?) in
-                if (error == nil) {
+            let argument : [Any] = ["\(sender.currentTitle!.characters.last!)"]
+            self.myCore?.callFunction(toggleFuntion, withArguments : argument, completion: { (resultCode : NSNumber?, error : Error?) in
+                if error == nil {
                     print("Toggled \(sender.currentTitle!)")
                     self.labelPinStatus.text = "Toggled \(sender.currentTitle!)"
                 } else {
