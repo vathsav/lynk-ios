@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     var myCore : SparkDevice?
     let toggleFuntion = "togglePin"
     let analogFuntion = "analogWrite"
-    let deviceName = "ruthless_dynamite"
+    let deviceName = "ruthless_dino"
     
     override func viewDidLoad() {
         super.viewDidLoad()

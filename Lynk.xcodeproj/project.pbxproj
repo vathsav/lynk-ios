@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BE1733BD1E0AC6BE00D85781 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1733BB1E0AC6BE00D85781 /* Main.storyboard */; };
-		BE1733BF1E0ACBE800D85781 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1733BE1E0ACBE800D85781 /* LoginViewController.swift */; };
 		BE8187871E12A0CF00EE0D5C /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8187861E12A0CF00EE0D5C /* PreferencesTableViewController.swift */; };
 		BE9666F31E04139B003FD46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9666F21E04139B003FD46A /* AppDelegate.swift */; };
 		BE9666F51E04139B003FD46A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9666F41E04139B003FD46A /* ViewController.swift */; };
@@ -56,7 +55,6 @@
 
 /* Begin PBXFileReference section */
 		BE1733BC1E0AC6BE00D85781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BE1733BE1E0ACBE800D85781 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BE8187861E12A0CF00EE0D5C /* PreferencesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesTableViewController.swift; sourceTree = "<group>"; };
 		BE9666EF1E04139B003FD46A /* Lynk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lynk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9666F21E04139B003FD46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				BE9666F21E04139B003FD46A /* AppDelegate.swift */,
-				BE1733BE1E0ACBE800D85781 /* LoginViewController.swift */,
 				BE9666F41E04139B003FD46A /* ViewController.swift */,
 				BE8187861E12A0CF00EE0D5C /* PreferencesTableViewController.swift */,
 				BE1733BB1E0AC6BE00D85781 /* Main.storyboard */,
@@ -294,7 +291,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE1733BF1E0ACBE800D85781 /* LoginViewController.swift in Sources */,
 				BE9666F51E04139B003FD46A /* ViewController.swift in Sources */,
 				BE8187871E12A0CF00EE0D5C /* PreferencesTableViewController.swift in Sources */,
 				BE9666F31E04139B003FD46A /* AppDelegate.swift in Sources */,
